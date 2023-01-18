@@ -2,7 +2,7 @@
 
 Codebase created with PHP 8.1.13 and Composer 2.5.1
 
-`php` constraint for the project allows PHP 8.1 or newer e.g. PHP 8.2 (`^7.1`)
+`php` constraint for the project allows PHP 8.1 or newer e.g. PHP 8.2 (`^8.1`)
 
 But one package `laminas/laminas-diactoros` has constraint `^7.3 || ~8.0.0 || ~8.1.0` so PHP 8.2 will cause error
 with `composer install`
