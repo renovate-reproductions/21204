@@ -1,0 +1,67 @@
+{
+    "name": "druidfi/renovate-test",
+    "type": "project",
+    "description": "Test on how PHP is handled on Renovate",
+    "homepage": "https://github.com/druidfi/renovate-test",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Druid.fi",
+            "email": "info@druid.fi"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "composer-runtime-api": "^2",
+        "composer/installers": "^2.0",
+        "drupal/core-composer-scaffold": "9.4.7",
+        "drupal/core-recommended": "9.4.7"
+    },
+    "require-dev": {
+        "drupal/core-dev-pinned": "9.4.7"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "allowed-packages": [
+                "drupal/core"
+            ],
+            "locations": {
+                "web-root": "./public"
+            },
+            "file-mapping": {
+                "[project-root]/.editorconfig": false,
+                "[web-root]/sites/default/default.services.yml": false,
+                "[web-root]/sites/default/default.settings.php": false
+            }
+        },
+        "installer-paths": {
+            "public/core": ["type:drupal-core"],
+            "public/modules/contrib/{$name}": ["type:drupal-module"],
+            "public/modules/custom/{$name}": ["type:drupal-module-custom"],
+            "public/profiles/{$name}": ["type:drupal-profile"],
+            "public/themes/contrib/{$name}": ["type:drupal-theme"],
+            "public/themes/custom/{$name}": ["type:drupal-theme-custom"],
+            "drush/{$name}": ["type:drupal-drush"]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
