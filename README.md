@@ -52,3 +52,15 @@ You can use platform configuration to "fake" PHP version and extensions. See htt
 Composer will always think that operations are run with set version.
 
 DANGER: you might end up with code NOT compatible with your actual environment having different PHP version.
+
+### Using fixed value for php in composer.json
+
+Instead of `"php": "^8.1",` you could have `"php": "8.1",` and Renovate would use PHP 8.1.
+
+See https://github.com/renovatebot/renovate/issues/2355#issuecomment-1386555211
+
+CON: `composer validate` would give a general warning:
+
+```
+- require.php : exact version constraints (8.1) should be avoided if the package follows semantic versioning
+```
