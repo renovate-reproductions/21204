@@ -67,16 +67,16 @@ CON: `composer validate` would give a general warning:
 - require.php : exact version constraints (8.1) should be avoided if the package follows semantic versioning
 ```
 
-### (In the future) Renovate config and constraints.php
+### Renovate config and constraints.php
 
 Using `constraints.php` in Renovate config: https://docs.renovatebot.com/configuration-options/#constraints
 
 ``` json
 {
   "constraints": {
-    "php": "8.1"
+    "php": "8.1.14"
   }
 }
 ```
 
-Obvious CON: this does not exist yet.
+CON: currently you cannot use minot version e.g. `8.1` but you need to use patch version `8.1.14`.
